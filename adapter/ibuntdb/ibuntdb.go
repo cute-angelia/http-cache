@@ -2,13 +2,21 @@ package ibuntdb
 
 import (
 	"fmt"
-	"github.com/cute-angelia/go-utils/components/caches/ibuntV2"
+	"github.com/cute-angelia/go-utils/components/caches"
+	cache "github.com/victorspringer/http-cache"
 	"time"
 )
 
 // Adapter is the memory adapter data structure.
 type Adapter struct {
-	store *ibuntV2.Component
+	store caches.Cache
+}
+
+// NewAdapter initializes Redis adapter.
+func NewAdapter(store caches.Cache) cache.Adapter {
+	return &Adapter{
+		store: store,
+	}
 }
 
 func (a Adapter) Get(key uint64) ([]byte, bool) {
