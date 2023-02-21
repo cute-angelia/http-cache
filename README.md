@@ -7,6 +7,12 @@ It is simple, super fast, thread safe and gives the possibility to choose the ad
 
 The memory adapter minimizes GC overhead to near zero and supports some options of caching algorithms (LRU, MRU, LFU, MFU). This way, it is able to store plenty of gigabytes of responses, keeping great performance and being free of leaks.
 
+## todo
+
+1. 支持独立的过期时间
+2. 支持 key 算法包括 header auth jwt
+
+
 ## Getting Started
 
 ### Installation
